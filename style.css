@@ -1,0 +1,283 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
+
+body {
+    background: url('img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.about-page-grid {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: fit-content fit-content fit-content;
+    grid-template-areas: 
+        "header"
+        "about-content"
+        "footer";
+}
+
+.photo-content{
+    visibility: hidden;
+    display: none;
+    margin-top: 10px;
+}
+
+.header{
+    grid-area: header;
+    background: white;
+    text-align: center;
+    text-decoration: none;
+    word-spacing: 10px;
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 1px gray;
+}
+
+.about-content {
+    grid-area: about-content;  
+    background: white;  
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+        "info info"
+        "list list";
+    padding: 30px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 2px 3px gray;
+}
+
+.footer {
+    grid-area: footer;
+    margin-top: 30px;
+    background: black;
+    -webkit-text-fill-color: white;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0px 3px gray;
+}
+
+header a{
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+
+.top{
+    text-decoration: none;
+}
+
+.info {
+    grid-area: info;
+}
+
+.info-title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center; 
+}
+
+.info-subtitle {
+    color: gray;
+    font-size: 1.2em;
+    line-height: 1em;
+    margin: 1.5em 1em 1.5em 1em;
+}
+
+.content-subtitle{
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+}
+
+.info-content {
+    margin: 20px 0 20px 0;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.cub {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: cub; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: cub;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cub {
+    from  {background-color:red; left: 0px;}
+    to {background-color: blue; left: 330px}
+}
+
+@media screen and (min-width: 768px){
+    .about-page-grid {
+        display: grid;
+        grid-template-columns: 1fr 740px 1fr;
+        grid-template-rows: fit-content fit-content fit-content fit-content;
+        grid-template-areas: 
+            ". header ."
+            ". about-content ."
+            ". photo ."
+            ". footer .";
+    }
+    
+    .about-content {
+        grid-area: about-content;  
+        background: white;  
+        margin-top: 50px;
+        padding: 30px 20px;
+        border: 1px solid #f1f1f1;
+        box-shadow: 2px 3px gray;
+    }
+
+    .photo{
+        grid-area: photo;
+        margin-top: 10px;
+    }
+
+    .header{
+        grid-area: header;
+        background: white;
+        text-align: center;
+        padding: 15px;
+        word-spacing: 20px;
+        border: 1px solid #f1f1f1;
+        box-shadow: 0px 1px gray;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    header a{
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        border-bottom: none;
+        display: inline;
+        padding: 10px;
+    }
+
+    .top{
+        display: none;
+    }
+
+    .cub {
+        width: 20px;
+        height: 20px;
+    }
+
+    @keyframes cub {
+        from  {background-color:red; left: 0px;}
+        to {background-color: blue; left: 705px}
+    }
+}
+
+@media screen and (min-width: 1280px){
+    .about-page-grid {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 768px 360px 1fr;
+        grid-template-rows: fit-content fit-content fit-content;
+        grid-template-areas: 
+            ". header header ."
+            ". about-content photo-content ."
+            ". footer footer .";
+        grid-gap: 10px;
+    }
+    
+    .about-content {
+        grid-area: about-content;  
+        background: white;  
+        margin-top: 60px;
+        padding: 30px 20px;
+        border: 1px solid #f1f1f1;
+        box-shadow: 2px 3px gray;
+    }
+
+    .photo-content{
+        grid-area: photo-content;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+            "photo-title"
+            "photo"
+            "photo-title"
+            "photo"
+            "photo-title"
+            "photo";
+        background: white;
+        padding: 10px;
+        margin-top: 60px;
+        box-shadow: 2px 3px gray;
+        visibility: visible;
+    }
+
+    .header{
+        grid-area: header;
+        background: white;
+        text-align: center;
+        padding: 15px;
+        word-spacing: 20px;
+        border: 1px solid #f1f1f1;
+        box-shadow: 0px 1px gray;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .photo{
+        grid-area: photo;
+        margin-top: 10px;
+        align-self: center;
+    }
+
+    .photo-title{
+        grid-area: photo-title;
+        margin: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid gray;
+    }
+
+    header a{
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        border-bottom: none;
+        display: inline;
+        padding: 10px;
+    }
+
+    .cub {
+        width: 25px;
+        height: 25px;
+        background-color: red;
+        position: relative;
+        -webkit-animation-name: cub; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+        -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+        animation-name: cub;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes cub {
+        from  {background-color:red; left: 0px;}
+        to {background-color: blue; left: 1105px}
+    }
+}
