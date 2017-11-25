@@ -211,21 +211,12 @@ header a{
 
     .photo-content{
         grid-area: photo-content;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas: 
-            "photo-title"
-            "photo"
-            "photo-title"
-            "photo"
-            "photo-title"
-            "photo";
         background: white;
         padding: 10px;
         margin-top: 60px;
         box-shadow: 2px 3px gray;
         visibility: visible;
+        display: block;
     }
 
     .header{
