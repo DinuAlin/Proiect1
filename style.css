@@ -65,7 +65,7 @@ body {
     box-shadow: 0px 3px gray;
 }
 
-header a{
+nav a{
     text-decoration: none;
     display: block;
     border-bottom: 1px solid gray;
@@ -164,7 +164,7 @@ header a{
         width: 100%;
     }
 
-    header a{
+    nav a{
         border-left: 1px solid gray;
         border-right: 1px solid gray;
         border-bottom: none;
@@ -246,7 +246,7 @@ header a{
         border-bottom: 1px solid gray;
     }
 
-    header a{
+    nav a{
         border-left: 1px solid gray;
         border-right: 1px solid gray;
         border-bottom: none;
